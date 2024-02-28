@@ -9,7 +9,7 @@ public class arrayDemo
         {
             System.out.print(students[i]+",");
         }
-        System.out.println(students[students.length]);
+        System.out.println(students[students.length-1]);
         
     }
 }
