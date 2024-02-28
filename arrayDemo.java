@@ -4,7 +4,7 @@ public class arrayDemo
     {
         String [] students = {"Ronnie", "Chris", "Robin","Lorrie","Kevin"}
         System.out.println(students);
-        int i
+        int i;
         for (i=0; i<students.length-1;i++)
         {
             System.out.print(students[i]+",");
