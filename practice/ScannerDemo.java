@@ -20,5 +20,7 @@ public class ScannerDemo {
 
         //output
         System.out.println(name + ", your fave number multiplied by 2 is " + favNum);
+
+        kb.close();
     }
 }
