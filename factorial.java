@@ -11,15 +11,22 @@ public class factorial {
         String numberString;
         int i;
 
-        System.out.println("Enter number: ");
-        numberString = input.nextLine();
+        System.out.print("Enter number: ");
+        numberString = input.next();
         number=Integer.parseInt(numberString);
 
-        for (i=number; i<1;i--)
+        while (number<=1)
+        {
+            System.out.print("Invalid input. Enter a positive number greater than 1: ");
+            numberString = input.next();
+            number=Integer.parseInt(numberString);    
+        }
+
+        for (i=number; i>1;i--)
         {
             accumulator*=i;
         }
-        System.out.println(accumulator);
+        System.out.println("The factorial of "+ number + " is " +accumulator);
 
         input.close();
     }
