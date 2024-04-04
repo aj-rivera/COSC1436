@@ -1,6 +1,7 @@
 import java.io.*;
 // import the ArrayList class
 import java.util.*; 
+
 // Create an ArrayList object
 public class WordFilter {
     //declarations
