@@ -24,7 +24,7 @@ public class bubbleSort {
         
         /* loop where a bubble passthrough is made and results are 
         printed accumulators totalSwaps, totalComparisons are added to as well */ 
-        for (pass=1; pass<=numbers.size()-2; pass++) {
+        for (pass=1; pass<=numbers.size()-1; pass++) {
             bubblePass(numbers);
             displayBubblePass(numbers);
             totalSwaps+=swaps;
