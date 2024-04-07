@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.util.*;
 
 public class transpose2DArray {
-    private static int rowsBefore, columnsBefore, sum, max, min;
+    private static int rowsBefore, columnsBefore, sum, max, min, rowsAfter, columnsAfter;
     // private static ArrayList<ArrayList<Integer>> originalArray = new
     // ArrayList<ArrayList<Integer>>();
     private static String rowString, columnString;
@@ -80,7 +80,9 @@ public class transpose2DArray {
     }
 
     public static void transpose(int[][] originalArray) {
-        int transposedArray[][] = new int[columnsBefore][rowsBefore];
+        rowsAfter = columnsBefore;
+        columnsAfter = rowsBefore;
+        int transposedArray[][] = new int[rowsAfter][columnsAfter];
 
         for (int i = 0; i < rowsBefore; i++) {
             for (int j = 0; j < columnsBefore; j++) {
@@ -88,6 +90,13 @@ public class transpose2DArray {
             }
         }
 
-        return transposedArray;
+        for (int i = 0; i < rowsAfter; i++) {
+            System.out.println();
+            for (int j = 0; j < columnsAfter; j++) {
+                System.out.print("\t" + transposedArray[i][j]);
+            }
+        }
+        System.out.println();
+
     }
 }

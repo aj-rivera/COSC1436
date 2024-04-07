@@ -11,5 +11,6 @@ public class twoD {
             }
         }
         System.out.print(originalArray[1][2]);
+        System.out.print(originalArray[0].length);
     }
 }
