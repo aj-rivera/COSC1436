@@ -3,38 +3,40 @@ import java.util.*;
 
 public class transpose2DArray {
     private static int rowsBefore, columnsBefore, sum, max, min, rowsAfter, columnsAfter;
-    // private static ArrayList<ArrayList<Integer>> originalArray = new
-    // ArrayList<ArrayList<Integer>>();
     private static String rowString, columnString;
-    // private static int[][] originalArray = new int[2][3];
 
     public static void main(String[] args) {
-
+        // getting user input
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the number of rows: ");
+        System.out.print("\nEnter the number of rows: ");
         rowString = input.nextLine();
         rowsBefore = Integer.parseInt(rowString);
 
-        System.out.println("Enter the number of columns: ");
+        System.out.print("Enter the number of columns: ");
         columnString = input.nextLine();
         columnsBefore = Integer.parseInt(columnString);
-
         input.close();
+
+        // declaring 2D array
         int originalArray[][] = new int[rowsBefore][columnsBefore];
+
         createArray(originalArray);
 
         printArray(originalArray);
 
         findSum(originalArray);
+        System.out.println("\nSum of all elements: " + sum);
 
         findMinMax(originalArray);
+        System.out.println("Maximum value: " + max);
+        System.out.println("Minimum value: " + min);
 
-        printArray(transpose(originalArray));
+        transpose(originalArray);
 
     }
 
+    // initializing array with random integers
     public static void createArray(int[][] originalArray) {
-
         for (int i = 0; i < rowsBefore; i++) {
             for (int j = 0; j < columnsBefore; j++) {
                 originalArray[i][j] = (int) (Math.random() * 100 + 1);
@@ -42,16 +44,21 @@ public class transpose2DArray {
         }
     }
 
+    // printing original array
     public static void printArray(int[][] originalArray) {
+        System.out.println("\nGenerated 2D Array: ");
         for (int i = 0; i < rowsBefore; i++) {
-            System.out.println();
+            if (i > 0) {
+                System.out.println();
+            }
             for (int j = 0; j < columnsBefore; j++) {
-                System.out.print("\t" + originalArray[i][j]);
+                System.out.print(originalArray[i][j] + "\t");
             }
         }
         System.out.println();
     }
 
+    // calculating sum
     public static void findSum(int[][] originalArray) {
         sum = 0;
         for (int i = 0; i < rowsBefore; i++) {
@@ -59,9 +66,9 @@ public class transpose2DArray {
                 sum += originalArray[i][j];
             }
         }
-        System.out.println("Sum: " + sum);
     }
 
+    // calculating mininum and maximum values in array
     public static void findMinMax(int[][] originalArray) {
         min = 101;
         max = 0;
@@ -75,10 +82,10 @@ public class transpose2DArray {
                 }
             }
         }
-        System.out.println("Min: " + min);
-        System.out.println("Max: " + max);
+
     }
 
+    // transposing and printing array
     public static void transpose(int[][] originalArray) {
         rowsAfter = columnsBefore;
         columnsAfter = rowsBefore;
@@ -90,10 +97,13 @@ public class transpose2DArray {
             }
         }
 
+        System.out.println("\nTransposed 2D Array: ");
         for (int i = 0; i < rowsAfter; i++) {
-            System.out.println();
+            if (i > 0) {
+                System.out.println();
+            }
             for (int j = 0; j < columnsAfter; j++) {
-                System.out.print("\t" + transposedArray[i][j]);
+                System.out.print(transposedArray[i][j] + "\t");
             }
         }
         System.out.println();
