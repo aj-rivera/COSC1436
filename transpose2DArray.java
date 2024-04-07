@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.util.*;
 
 public class transpose2DArray {
-    private static int rowsBefore, columnsBefore, rowsAfter, columnsAfter, sum, max, min;
+    private static int rowsBefore, columnsBefore, sum, max, min;
     // private static ArrayList<ArrayList<Integer>> originalArray = new
     // ArrayList<ArrayList<Integer>>();
     private static String rowString, columnString;
@@ -28,6 +28,8 @@ public class transpose2DArray {
         findSum(originalArray);
 
         findMinMax(originalArray);
+
+        printArray(transpose(originalArray));
 
     }
 
@@ -69,11 +71,23 @@ public class transpose2DArray {
                     min = originalArray[i][j];
                 }
                 if (originalArray[i][j] > max) {
-                    max = original[i][j];
+                    max = originalArray[i][j];
                 }
             }
         }
         System.out.println("Min: " + min);
-        System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
+    }
+
+    public static void transpose(int[][] originalArray) {
+        int transposedArray[][] = new int[columnsBefore][rowsBefore];
+
+        for (int i = 0; i < rowsBefore; i++) {
+            for (int j = 0; j < columnsBefore; j++) {
+                transposedArray[j][i] = originalArray[i][j];
+            }
+        }
+
+        return transposedArray;
     }
 }
