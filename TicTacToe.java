@@ -2,18 +2,21 @@ import java.util.*;
 import java.io.*;
 
 public class TicTacToe {
+
     private static String board[][] = {
             { "1", "2", "3" },
             { "4", "5", "6" },
             { "7", "8", "9" } };
 
     private static String leftoverSpots[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+    private static boolean won = false;
 
     public static void main(String[] args) {
 
         printBoard();
         userPlays();
         printBoard();
+        checkIfWon();
     }
 
     public static void printBoard() {
@@ -45,6 +48,10 @@ public class TicTacToe {
     }
 
     public static void checkIfWon() {
-
+        if ((board[0][0].equals(board[0][1]) && board[0][0].equals(board[0][2])) ||
+                (board[0][0].equals(board[1][0]) && board[0][0].equals(board[2][0])) ||
+                (board[1][0].equals(board[1][1]) && board[1][0].equals(board[1][2]))) {
+            won = true;
+        }
     }
 }
